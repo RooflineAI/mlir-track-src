@@ -1,7 +1,6 @@
 from collections.abc import Sequence
 
-from mlir.ir import Operation
-
+from mlir_track_src.bindings import Operation
 from mlir_track_src.ops import OperationIndex, OperationInfo
 from mlir_track_src.src_loc import SourceRange
 

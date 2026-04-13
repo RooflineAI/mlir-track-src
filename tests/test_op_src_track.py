@@ -10,7 +10,7 @@ from mlir_track_src.op_src_track import (
 )
 from mlir_track_src.ops import OperationIndex
 from mlir_track_src.src_loc import SourceRange, SourceReMap
-from mlir.ir import Context, Module
+from mlir_track_src.bindings import Context, Module
 
 
 def _create_simple_module(tmp_path: Path) -> Path:

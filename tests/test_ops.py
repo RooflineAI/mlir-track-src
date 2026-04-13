@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from mlir_track_src.ops import OperationIndex, OperationInfo
 from mlir_track_src.src_loc import SourceLocation, SourceRange, SourceReMap
-from mlir.ir import Context, Module, Operation, WalkOrder, WalkResult
+from mlir_track_src.bindings import Context, Module, Operation, WalkOrder, WalkResult
 
 
 def _get_op_by_name(module: Module, name: str) -> Operation | None:

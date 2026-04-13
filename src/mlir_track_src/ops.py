@@ -3,8 +3,7 @@ from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
 
-from mlir.ir import AsmState, Operation, WalkOrder, WalkResult
-
+from mlir_track_src.bindings import AsmState, Operation, WalkOrder, WalkResult
 from mlir_track_src.src_loc import (
     SourceLocation,
     SourceRange,
