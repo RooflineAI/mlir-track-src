@@ -156,3 +156,20 @@ You can now start the tool or run tests.
 ```bash
 pytest
 ```
+
+## Contributing
+
+For any changes please file a PR to the main branch.
+
+### Pre-Commit
+
+This repository uses [pre-commit](https://pre-commit.com/) to manage and
+maintain code quality. To install the pre-commit hooks, run:
+```bash
+pre-commit install
+```
+
+To manually run the pre-commit checks against all files, run:
+```bash
+pre-commit run --all-files
+```
