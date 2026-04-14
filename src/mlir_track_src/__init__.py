@@ -1,3 +1,6 @@
+# Copyright 2026 RooflineAI GmbH
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
 from importlib.metadata import PackageNotFoundError, version
 
 try:

@@ -1,3 +1,6 @@
+# Copyright 2026 RooflineAI GmbH
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
 try:
     from mlir.ir import Context, Module, AsmState, Operation, WalkOrder, WalkResult
 except ImportError as e:

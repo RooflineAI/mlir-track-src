@@ -1,3 +1,6 @@
+# Copyright 2026 RooflineAI GmbH
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
 import dataclasses
 from collections.abc import Iterator
 from pathlib import Path
