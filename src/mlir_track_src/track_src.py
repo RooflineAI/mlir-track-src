@@ -6,8 +6,8 @@ from pathlib import Path
 from typing import Annotated, Any, Optional
 
 import typer
-from mlir.ir import Context, Module
 
+from mlir_track_src.bindings import Context, Module
 from mlir_track_src.op_src_track import shrink_to_children, shrink_to_parents, track
 from mlir_track_src.ops import OperationIndex, OperationInfo
 from mlir_track_src.src_loc import SourceRange, SourceReMap
