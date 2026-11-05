@@ -6,7 +6,16 @@ from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
 
-from mlir_track_src.bindings import AsmState, Operation, WalkOrder, WalkResult
+from mlir_track_src.bindings import (
+    AsmState,
+    CallSiteLoc,
+    FileLineColLoc,
+    FusedLoc,
+    NameLoc,
+    Operation,
+    WalkOrder,
+    WalkResult,
+)
 from mlir_track_src.src_loc import (
     SourceLocation,
     SourceRange,
@@ -17,10 +26,10 @@ from mlir_track_src.src_loc import (
 def _build_src_range_from_op_loc(
     op_location: Any, source_remap: SourceReMap
 ) -> SourceRange:
-    if op_location.is_a_callsite():
+    if isinstance(op_location, CallSiteLoc):
         return _build_src_range_from_op_loc(op_location.callee, source_remap)
 
-    if op_location.is_a_fused():
+    if isinstance(op_location, FusedLoc):
         child_locations = op_location.locations
         if not child_locations:
             return SourceRange.unknown()
@@ -33,11 +42,11 @@ def _build_src_range_from_op_loc(
             merged_range = merged_range.merge(loc)
         return merged_range
 
-    if op_location.is_a_name():
+    if isinstance(op_location, NameLoc):
         return SourceRange.unknown()
 
     # Unknown location
-    if not op_location.is_a_file():
+    if not isinstance(op_location, FileLineColLoc):
         return SourceRange.unknown()
 
     file_path_str: str | None = op_location.filename
