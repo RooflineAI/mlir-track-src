@@ -2,7 +2,18 @@
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
 try:
-    from mlir.ir import Context, Module, AsmState, Operation, WalkOrder, WalkResult
+    from mlir.ir import (
+        Context,
+        Module,
+        AsmState,
+        Operation,
+        WalkOrder,
+        WalkResult,
+        CallSiteLoc,
+        FileLineColLoc,
+        FusedLoc,
+        NameLoc,
+    )
 except ImportError as e:
     try:
         from iree.compiler.ir import (
@@ -12,6 +23,10 @@ except ImportError as e:
             Operation,
             WalkOrder,
             WalkResult,
+            CallSiteLoc,
+            FileLineColLoc,
+            FusedLoc,
+            NameLoc,
         )
     except ImportError:
         raise ImportError(
@@ -26,4 +41,8 @@ __all__ = [
     "Operation",
     "WalkOrder",
     "WalkResult",
+    "CallSiteLoc",
+    "FileLineColLoc",
+    "FusedLoc",
+    "NameLoc",
 ]
